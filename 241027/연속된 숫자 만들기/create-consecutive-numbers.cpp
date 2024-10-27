@@ -14,10 +14,10 @@ int main() {
     int left,mid,right;
     int cnt = 0;
     while(1){
-        mid = arr[1]; right = arr[2];
+        left = arr[0]; mid = arr[1]; right = arr[2];
+        if(left + right == 2*mid) break;
         int go = (mid + right)%2 ? (mid + right)/2 + 1 : (mid + right)/2;
         cnt++;
-        if(2*go == mid + right) break;
         arr[0] = mid;
         arr[1] = go;
     }
@@ -27,10 +27,10 @@ int main() {
     arr[0] = a; arr[1]=b; arr[2]=c;
     cnt = 0;
     while(1){
-        left = arr[0]; mid = arr[1];
+        left = arr[0]; mid = arr[1], right = arr[2];
+        if(left + right == 2*mid) break;
         int go = (left+mid)%2 ? (left+mid)/2 + 1 : (left+mid)/2;
         cnt++;
-        if(2*go == left + mid) break;
         arr[2] = mid;
         arr[1] = go;
     }
